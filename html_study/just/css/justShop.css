@@ -40,39 +40,63 @@ header.a{
     width: 800px;
     position: absolute;
     top: 50px;
-    left: 100px;
+    left: 50px;
 }
-.a2 > .mainMenu > ul > li.menuItem{
-     position: relative;
-     width: 200px;
-     
-     display: flex;
-     
-}
-.a2 > .mainMenu > ul > li.menuItem > a{
-    display: block;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background-color: #b1023c;
-    color: rgb(243, 239, 239);
+
+.a2 > .mainMenu > ul {
     width: 200px;
 }
-.a2 > .mainMenu > ul > li.menuItem:hover > a{
-    display: block;
 
+/* 메인 메뉴 */
+.a2 > .mainMenu > ul > li.menuItem {
+    width: 200px;
+    position: relative;
 }
-.a2 > .mainMenu > ul > li.menuItem > .subMenu{
+
+/* 탑 / 아우터 / 팬츠 / 악세사리 */
+.a2 > .mainMenu > ul > li.menuItem > a {
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+
+    text-align: center;
+
+    background-color: #99f037;
+    color: #333;
+
+    font-weight: 800;
+}
+
+/* 서브메뉴 */
+.a2 > .mainMenu > ul > li.menuItem > .subMenu {
     display: none;
     position: absolute;
     top: 50px;
-    left: 70px;
-    background-color: rgba(180, 222, 215, 0); 
-    
+    left: 0;
+    width: 200px;
+    background-color: rgba(180, 238, 153, 0.9);
+    z-index: 100;
 }
-.a2 > .mainMenu > ul > li.menuItem > .subMenu > li:hover> a{
-   display: block;
-   background-color: #5c92d8;
+
+/* 서브메뉴 각각의 li */
+.a2 > .mainMenu > ul > li.menuItem > .subMenu li {
+    width: 200px;
+}
+
+/* 서브메뉴 링크 */
+.a2 > .mainMenu > ul > li.menuItem > .subMenu a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    color: #333;
+}
+
+/* 서브메뉴에 마우스를 올리면 */
+.a2 > .mainMenu > ul > li.menuItem > .subMenu a:hover {
+    color: #fff;
+    font-weight: 700;
 }
 
 .b{
