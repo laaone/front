@@ -25,13 +25,13 @@ header.a{
 .a>.a1{
     width: 300px;
     height: 100px;
-    background-color: #c46f56;
+    background-color: #f0b09d;
 }
 
 .a>.a2{
     width: 900px;
     height: 100px;
-    background-color: #a3f149;
+    background-color: #cceea6;
     position: relative;
 }
 .a2 > .mainMenu {
@@ -62,7 +62,7 @@ header.a{
 
     text-align: center;
 
-    background-color: #99f037;
+    background-color: #eef0ed;
     color: #333;
 
     font-weight: 800;
@@ -129,14 +129,65 @@ header.a{
 .c{
     width: 1200px;
     height: 200px;
-    background-color: #e1a1f1;
     display: flex;
 }
 
 .c>.c1{
     width: 400px;
     height: 200px;
-    background-color: #ec78ec;
+    
+}
+
+
+
+.tab-box{
+    width:400px;
+    height: 200px;
+    margin: 2px;
+}
+.tabs{
+ display: flex;
+ justify-content: left;
+}
+.tab{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #ddd; 
+    background-color: #eee;
+    cursor: pointer;
+}
+.tab.active {
+    background-color: #fff;
+    font-weight: 800;
+}
+.content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 500px;
+    height: 150px;
+    background-color: #e0e0db;
+}
+.content.active {
+    display: block;
+}
+.content li {
+    padding: 5px;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 10px;
+    font-weight: 700;
+
+}
+.gallery {
+    display: flex;
+    gap: 10px;
+}
+.gallery img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    margin: 2px;
 }
 
 .c>.c2{
@@ -148,7 +199,7 @@ header.a{
 .c>.c3{
     width: 400px;
     height: 200px;
-    background-color: #f005f0;
+    background-color: #f0a8f0;
 }
 
 .d{

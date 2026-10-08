@@ -1,0 +1,41 @@
+.tab-box{
+    width:100%;
+    margin: 50px auto;
+}
+.tabs{
+ display: flex;
+}
+.tab{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #ddd; 
+    background-color: #eee;
+    cursor: pointer;
+}
+.tab.active {
+    background-color: #fff;
+    font-weight: 800;
+}
+.content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 500px;
+    height: 150px;
+    background-color: #e0e0db;
+}
+.content.active {
+    display: block;
+}
+.content li {
+    padding: 5px;
+}
+.gallery {
+    display: flex;
+    gap: 10px;
+}
+.gallery img {
+    width: 130px;
+    height: 80px;
+    object-fit: cover;
+}
