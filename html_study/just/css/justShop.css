@@ -25,13 +25,13 @@ header.a{
 .a>.a1{
     width: 300px;
     height: 100px;
-    background-color: #f0b09d;
+    background-color: #d4aa9d;
 }
 
 .a>.a2{
     width: 900px;
     height: 100px;
-    background-color: #cceea6;
+    background-color: #9aeb3e;
     position: relative;
 }
 .a2 > .mainMenu {
@@ -75,7 +75,7 @@ header.a{
     top: 50px;
     left: 0;
     width: 200px;
-    background-color: rgba(180, 238, 153, 0.9);
+    background-color: rgba(180, 238, 153, 0.7);
     z-index: 100;
 }
 
@@ -164,7 +164,7 @@ header.a{
     display: none;
     padding: 20px;
     border: 1px solid #ddd;
-    width: 500px;
+    width: 400px;
     height: 150px;
     background-color: #e0e0db;
 }
@@ -193,15 +193,49 @@ header.a{
 .c>.c2{
     width: 400px;
     height: 200px;
-    background-color: #e250e2;
+    
 }
+.c>.c2.banner{
+  background-image: url("../images/banner.jpg");
+}
+.c>.c2.banner>a{
+    width: 100px;
+    padding: 14px 5px;
+    text-align: center;
+    color: #fff; 
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 14px;
+    background-color: rgba(114, 63, 251, 0.5);
+}
+.c>.c2.banner>a:hover{
+   
+    font-size: 30px;
+    background-color: rgba(69, 21, 199, 0.5);
+}
+
 
 .c>.c3{
     width: 400px;
     height: 200px;
-    background-color: #f0a8f0;
-}
+   
 
+}
+.c>.c3.direct{
+ background-image: url("../images/direct.jpg");
+}
+.c>.c3.direct>a{
+    width: 400px;
+    height: 200px;
+    background-color:  rgba(181,63,118,5); 
+    font-size: 20px;
+     
+   
+}
+.c>.c3.direct>a:hover{
+   font-size: 40px;
+   background-color: rgba(181,63,118,0.7); 
+}
 .d{
     width: 1200px;
     height: 100px;
@@ -212,19 +246,32 @@ header.a{
 .d>.d1{
     width: 200px;
     height: 100px;
-    background-color: #eb5285;
+    background-color: #435b5f;
+}
+.d>.d1>.footerLogo{
+    margin-top: 20px;
 }
 
 .d>.d2{
     width: 800px;
     height: 100px;
-    background-color: #eb185e;
+    background-color: #141d29;
+    font-size: 22px;
+    
+}
+.d>.d2>.d2-1{
+    margin: 35px;
+    color: #867f7f;
 }
 
 .d>.d3{
     width: 200px;
     height: 100px;
-    background-color: #b1023c;
+    background-color: #3f393b;
+
+}
+.d>.d3>.d3-1{
+    margin-top: 20px;
 }
 
 

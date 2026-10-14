@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .speech-bubble {
+        background-color: #f8f9fa;
+        border: 2px solid #dee2e6;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 20px;
+        position: relative;
+        max-width: 300px;
+      }
+
+      .speech-bubble::after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 30px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid #f8f9fa;
+      }
+
+      .speech-bubble::before {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 28px;
+        width: 0;
+        height: 0;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top: 14px solid #dee2e6;
+      }
+      .greeting {
+        font-size: 20px;
+        color: #333;
+        padding: 10px;
+      }
+      .greeting::before {
+        content: "~";
+        color: #ff66bb;
+      }
+      .greeting::after {
+        content: "!";
+        color: #75ec65;
+      }
+      .button {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        position: relative;
+      }
+      .button::before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid white;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+      .button::after {
+        content: "→";
+        margin-left: 8px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="greeting">안녕하세요</p>
+    <a href="#" class="button">다운로드</a>
+    <div class="speech-bubble">
+      가상 요소를 사용하면 이렇게 멋진 말풍선도 만들 수 있어요!
+    </div>
+  </body>
+</html>
