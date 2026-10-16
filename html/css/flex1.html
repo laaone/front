@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>align-items 실습</title>
+    <style>
+      .container {
+        display: flex;
+        height: 200px;
+        background-color: #f0f0f0;
+        border: 2px solid #333;
+        margin-bottom: 20px;
+      }
+
+      .item {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        margin: 5px;
+        border-radius: 5px;
+      }
+
+      .stretch {
+        align-items: stretch;
+      }
+      .flex-start {
+        align-items: flex-start;
+      }
+      .flex-end {
+        align-items: flex-end;
+      }
+      .center {
+        align-items: center;
+      }
+      .baseline {
+        align-items: baseline;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>stretch (기본값)</h3>
+    <div class="container flex-start">
+      <div class="item">아이템 1</div>
+      <div class="item">아이템 2<br />두 줄</div>
+      <div class="item">아이템 3</div>
+    </div>
+
+    <h3>center</h3>
+    <div class="container center">
+      <div class="item">아이템 1</div>
+      <div class="item">아이템 2<br />두 줄</div>
+      <div class="item">아이템 3</div>
+    </div>
+  </body>
+</html>

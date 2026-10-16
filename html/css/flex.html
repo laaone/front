@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        padding: 1rem; /*현재글자폰트 1배*/
+        width: 200px;
+      }
+      .nav-item {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 0.5rem;
+        background-color: #555;
+        border-radius: 4px;
+      }
+      .nav-iteam:hover {
+        background-color: #777;
+      }
+      .full-navbar {
+        display: flex;
+        justify-content: space-between; /* 요소들을 양 끝과 가운데로 분산 */
+        align-items: center; /* 세로 중앙 정렬 */
+        background-color: #333;
+        padding: 1rem 2rem;
+        color: white;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #4caf50;
+      }
+      .nav-menu {
+        display: flex; /* 메뉴 내부도 Flexbox로 */
+        gap: 1rem; /* 항목 간 간격 */
+      }
+      .nav-item1 {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.9s;
+      }
+      .nav-item1:hover {
+        background-color: #777;
+      }
+      .login-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 4px;
+        border: 2px solid #4caf50;
+        transition: all 0.7s;
+      }
+      .login-btn:hover {
+        background-color: transparent;
+        color: #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="nav-item">홈</a>
+      <a href="#" class="nav-item">소개</a>
+      <a href="#" class="nav-item">서비스</a>
+      <a href="#" class="nav-item">연락처</a>
+    </nav>
+    <hr />
+    <nav class="full-navbar">
+      <div class="logo">MyWebsite</div>
+      <div class="nav-menu">
+        <a href="#" class="nav-item1">홈</a>
+        <a href="#" class="nav-item1">소개</a>
+        <a href="#" class="nav-item1">서비스</a>
+        <a href="#" class="nav-item1">연락처</a>
+      </div>
+      <div class="auth-buttons">
+        <a href="#" class="login-btn">로그인</a>
+      </div>
+    </nav>
+  </body>
+</html>

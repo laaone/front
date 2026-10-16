@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Wrap 실습</title>
+    <style>
+      .container {
+        display: flex;
+        width: 400px;
+        height: 200px;
+        border: 2px solid #333;
+        margin: 20px 0;
+      }
+
+      .nowrap {
+        flex-wrap: nowrap; /* 기본값 */
+      }
+
+      .wrap {
+        flex-wrap: wrap;
+        align-content: space-between;
+      }
+
+      .item {
+        width: 150px;
+        height: 80px;
+        background-color: #4caf50;
+        border: 2px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>flex-wrap: nowrap (기본값)</h3>
+    <div class="container nowrap">
+      <div class="item">카드 1</div>
+      <div class="item">카드 2</div>
+      <div class="item">카드 3</div>
+      <div class="item">카드 4</div>
+    </div>
+
+    <h3>flex-wrap: wrap</h3>
+    <div class="container wrap">
+      <div class="item">카드 1</div>
+      <div class="item">카드 2</div>
+      <div class="item">카드 3</div>
+      <div class="item">카드 4</div>
+    </div>
+  </body>
+</html>
