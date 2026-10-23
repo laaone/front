@@ -213,3 +213,107 @@ let arr13 = [10,5,3]
 arr13.sort(compare)
 
 console.log(arr13);
+
+// 문제1 숫자 오름차순과 내림차순 정렬
+// 오름차순: [5, 10, 25, 40, 100]
+// 내림차순: [100, 40, 25, 10, 5]
+// 힌트: 숫자는 다음과 같이 비교해야 합니다.
+// (a, b) => a - b  // 오름차순
+// (a, b) => b - a  // 내림차순
+
+const numbers = [40, 5, 100, 25, 10];
+const ascending = [...numbers].sort((a,b)=> a-b)
+const descending = [...numbers].sort((a,b)=> b-a)
+//numbers.sort(ascending);
+console.log( ascending );
+console.log( descending );
+
+
+// 문제2 문자 오름차순 정렬
+const names = ["박철수", "김민수", "최지우", "이영희", "강하늘"];
+const descendingNames = [...names].sort( (a,b)=> b.localeCompare(a, "ko" ) );
+console.log( names.sort());
+console.log( names.sort().reverse());
+
+//문제3  상품 객체 배열을 가격이 낮은 순서대로 정렬하세요.
+const products1 = [
+    { name: "노트북", price: 1200000 },
+    { name: "마우스", price: 30000 },
+    { name: "모니터", price: 350000 },
+    { name: "키보드", price: 80000 }
+];
+/*
+[
+    { name: "마우스", price: 30000 },
+    { name: "키보드", price: 80000 },
+    { name: "모니터", price: 350000 },
+    { name: "노트북", price: 1200000 }
+]
+*/
+
+const asPrice = [...products1].sort(  (a,b)=>  a.price - b.price   );//가격 오름차순
+const desPrice = [...products1].sort(  (a,b)=>  b.price - a.price   ); //가격 내림차순
+const asName1 = [...products1].sort(  (a,b)=>  a.name.localeCompare(b.name, "ko" )   );// name 오름차순으로 정렬
+console.log( asPrice );
+console.log( desPrice );
+console.log( asName1 );
+
+
+const asPrice1 = [...products1].sort((a,b)=>a.name - b.name )
+const desPrice1 = [...products1].sort((a,b)=>b.name - a.name )
+const asName = [...products1].sort(  (a,b)=>  a.name.localeCompare(b.name, "ko" )   );// name 오름차순으로 정렬
+console.log( asPrice1);
+console.log( desPrice1);
+
+// 문제4 학생 평균 점수 내림차순 정렬하기
+/*
+ 학생별 국어, 영어, 수학 점수가 있습니다.
+1. 각 학생의 평균 점수를 계산합니다.
+2. 평균 점수가 높은 학생부터 정렬합니다.
+3. 평균 점수는 소수점 둘째 자리까지 출력합니다.
+실행결과
+[
+    { name: "이영희", average: 91.67 },
+    { name: "최지우", average: 90.00 },
+    { name: "김민수", average: 85.00 },
+    { name: "박철수", average: 75.00 }
+]
+*/
+const students1 = [
+    { name: "김민수", korean: 80, english: 90, math: 85 },
+    { name: "이영희", korean: 95, english: 88, math: 92 },
+    { name: "박철수", korean: 70, english: 75, math: 80 },
+    { name: "최지우", korean: 90, english: 90, math: 90 }
+];
+let studentAvgAsc = students1.map((item) => {
+                  let avg = (item.korean + item.english + item.math)/3;
+                  return {name: item.name, average: avg.toFixed(2)}
+               }
+            ).sort((a,b)=>a. average- b. average )   ;
+
+console.log( studentAvgAsc )
+
+
+//join
+let arr15 = ["안녕","나는","이정환"]
+console.log(arr15.join());
+console.log(arr15.join("-"));
+console.log(arr15.join(" "));
+
+//115 reduce
+// 배열명.reduce(( acc, item, index, array) => {} )
+let arr16 = [1,2,3,4,5]
+let result16 = arr16.reduce((acc,item)=>acc+item,0) //0은 초기값  
+console.log(result16);
+
+//1000-아이템 빼기
+ 
+const numbers17 = [10,20,30,40,50]
+let result17 = numbers17.reduce((acc,item)=>acc-item,1000)
+console.log(result17);
+
+  
+
+
+
+
