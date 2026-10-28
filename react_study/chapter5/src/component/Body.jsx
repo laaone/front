@@ -1,6 +1,7 @@
 import "./Body.css"
 
-const Body =() =>{
+const Body =(props) =>{
+    const  {children} = props;
     const numbur = 1;
     const numA = 1;
     const numB = 2;
@@ -21,6 +22,7 @@ const Body =() =>{
              <li> { String(boolA || boolB) } </li>
              <li> 객체자료 {objA.a}---- {objA.b} </li>
              <li> 조건부 랜더링 :   {numbur} 는{ numbur % 2 === 0 ? "짝수" : "홀수" } 입니다.   </li>
+             <li> {children} </li>
             </ul>
         </>
     );
