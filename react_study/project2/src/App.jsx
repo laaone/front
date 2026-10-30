@@ -1,10 +1,12 @@
 
 import './App.css';
-import { useReducer, useRef } from 'react';
+import React, { useMemo, useReducer, useRef, useCallback } from 'react';
 import Header from './component/Header';
 import TodoEditor from './component/TodoEditor';
 import TodoList from './component/TodoList';
 import TestComp from './component/TestComp';
+
+
 
 const mockTodo = [
   {
@@ -35,9 +37,14 @@ const reducer = (state,action)=>{
       }
      
 }
-
+export const TodoStateContext = React.createContext(); //  1단계 TodoContext를 만든다.
+export const TodoDispatchContext = React.createContext();
 
 function App() {
+
+ 
+  
+
   const idRef = useRef(3);
     
   const [todo, dispatch ] = useReducer( reducer, mockTodo );
@@ -54,25 +61,34 @@ function App() {
                           });             
                                 idRef.current += 1;
                               }
-  const onUpdate = ( targetId )=> {
+  const onUpdate = useCallback( ( targetId )=> {
                             dispatch( { type: "UPDATE", targetId, });
-       
-
-  }
-  const onDelete = ( targetId )=> { 
+                           }, [] );
+                           
+  const onDelete = useCallback( ( targetId )=> { 
                             dispatch( { type:"DELETE", targetId,})
                            
-  }
+                                     }, [] );
+
+  const memorizedDispatches = useMemo( () =>{
+    return{ onCreate, onUpdate, onDelete };
+  } , [] );
+
   return (
     <>
     <div className= 'App'>
       <TestComp/>
       <Header/>
-      <TodoEditor onCreate={ onCreate } />
-      <TodoList todo={ todo} onUpdate = {onUpdate} onDelete={onDelete} />
+      <TodoStateContext.Provider value={ todo }> 
+        {/* {// 2단계 그룹안에 컴포넌트 넣기} */}
+        <TodoDispatchContext.Provider value={ memorizedDispatches }>
+      <TodoEditor />
+      <TodoList  />
+      </TodoDispatchContext.Provider>
+      </TodoStateContext.Provider>
       </div>  
     </>
-  )
+  );
 }
 
 export default App

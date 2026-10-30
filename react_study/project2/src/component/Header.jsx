@@ -1,5 +1,11 @@
 import "./Header.css";
+import React from "react";
+
+
 const Header = ()=>{
+
+    // console.log( "Headet 업데이트..."); // Header 컴포넌트 호출, 리랜더될 때마다 콘솔에 출력
+    
     return(
         <>
         <div className="Header">
@@ -9,4 +15,4 @@ const Header = ()=>{
         </>
     )
 }
-export default Header;
+export default React.memo(Header);
