@@ -9,20 +9,20 @@ import Edit from "./pages/Edit";
 const mockData = [
   {
     id: "mock1",
-    date: new Date().getTime()+3,
-    contemt: "mock1",
+    date: new Date().getTime(),
+    content: "mock1",
     emotionId: 1,
   },
   {
     id: "mock2",
-    date: new Date().getTime()-2,
-    contemt: "mock2",
+    date: new Date().getTime(),
+    content: "mock2",
     emotionId: 2,
   },
   {
     id: "mock3",
-    date: new Date().getTime()-3,
-    contemt: "mock3",
+    date: new Date().getTime(),
+    content: "mock3",
     emotionId: 3,
   },
 ]
@@ -62,7 +62,7 @@ function App() {
           });
           setIsDataLoaded(true);
   },[]);
-  const onCreate = (data, content, emotionId) => {
+  const onCreate = (date, content, emotionId) => {
     dispatch({
          type: "CREATE",
          data: {
@@ -99,7 +99,9 @@ function App() {
   return (
     <>
     <DiaryStateContext.Provider value={data}>
-      <DiaryDispatchContext.Provider>
+      <DiaryDispatchContext.Provider value={ { onCreate,
+                                              onUpdate,
+                                              upDelete }}>
        <div className="App">
          <Routes> 
            <Route path="/" element = {<Home/>} />
