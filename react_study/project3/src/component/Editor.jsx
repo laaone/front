@@ -1,5 +1,5 @@
 import "./Editor.css";
-import {useState, useEffect } from "react";
+import {useState, useEffect, useCallback } from "react";
 import { emotionList, getFormattedDate } from "../util"
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
@@ -26,9 +26,9 @@ const Editor = ( {initData, onSubmit} )=>{
         navigate(-1);  // 브라우저의 뒤로가기 이벤트가 1회 동작합니다. 
     }
 
-    const handleChangeEmotion = ( emotionId ) =>{
-            setState( {...state, emotionId } );
-    }
+    const handleChangeEmotion = useCallback( ( emotionId ) =>{
+            setState( (state)=> ( {...state, emotionId } ) );
+    }, [] );
    
     useEffect( () => {
         if(initData){

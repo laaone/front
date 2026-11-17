@@ -4,12 +4,18 @@ import Button from "../component/Button";
 import Header from "../component/Header";
 import { getFormattedDate } from "../util";
 import Viewer from "../component/Viewer";
+import { setPageTitle } from "../util";
+import { useEffect } from "react";
+
 
 const Disry = ()=> {
       const {id} = useParams();  //주소의 파라미터값을 받아서 id 객체에 담는다
       const data = useDiary(id);
 
       const navigate = useNavigate();
+
+       useEffect( ()=> setPageTitle(`${id}번 일기`) ,[]);
+
       const goBack = ()=>{
            navigate(-1)
       }

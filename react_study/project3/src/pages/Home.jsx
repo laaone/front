@@ -2,14 +2,17 @@ import Button from "../component/Button";
 import Header from "../component/Header";
 import {useState, useContext, useEffect } from "react";
 import { DiaryStateContext } from "../App";
-import { getMonthRangeByDate } from "../util";
+import { getMonthRangeByDate, setPageTitle } from "../util";
 import DiaryList from "../component/DiaryList";
 
 
 const Home = ()=>{
+    setPageTitle("임라원 감정일기장 홈");
     const data = useContext( DiaryStateContext );
     const [ pivotDate, setPivotDate ] = useState( new Date() );
     const [filteredData, setFilteredData ] = useState([]);
+
+    useEffect( ()=> setPageTitle("임라원 감정일기장 홈") ,[]);
     
     const onIncreaseMonth = () =>{
         setPivotDate( new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1 ));
