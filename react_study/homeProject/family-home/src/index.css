@@ -1,0 +1,267 @@
+:root {
+  --bg: #f7f5f0;
+  --paper: #fffefa;
+  --ink: #30352f;
+  --muted: #777d75;
+  --line: #e9e5dc;
+  --green: #647d6b;
+  --pink: #f6e5e8;
+  --blue: #e8eef7;
+  --yellow: #f8f0dc;
+  --lav: #eee9f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: Arial, 'Malgun Gothic', sans-serif;
+  color: var(--ink);
+}
+
+.app {
+  max-width: 1180px;
+  margin: 24px auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px #51483212;
+  min-height: 90vh;
+}
+
+.top {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--green);
+}
+
+.user {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: calc(90vh - 64px);
+}
+
+nav {
+  padding: 22px 14px;
+  border-right: 1px solid var(--line);
+  background: #fcfbf8;
+}
+
+nav button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 13px 14px;
+  margin: 4px 0;
+  border-radius: 12px;
+  font-size: 15px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+nav button.active,
+nav button:hover {
+  background: var(--pink);
+  font-weight: 700;
+}
+
+main {
+  padding: 26px;
+  min-width: 0;
+}
+
+.hero {
+  border-radius: 18px;
+  padding: 34px;
+  background: linear-gradient(110deg, #f4e6d9, #f4eee3 55%, #e8eee5);
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.hero p {
+  margin: 0;
+  color: #62675f;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 18px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px #0000000a;
+}
+
+.emoji {
+  font-size: 23px;
+}
+
+.card b {
+  display: block;
+  font-size: 17px;
+  margin: 8px 0 4px;
+}
+
+.card small {
+  color: var(--muted);
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  margin: 14px 0;
+}
+
+.panel h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0 18px;
+}
+
+.chip {
+  background: #f3f1ec;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0eee9;
+}
+
+.row:last-child {
+  border: 0;
+}
+
+.btn {
+  border: 0;
+  background: var(--green);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.back {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+footer {
+  padding: 16px 26px;
+  color: var(--muted);
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+}
+
+/* 모바일 화면 (폭 720px 이하) */
+@media (max-width: 720px) {
+  .app {
+    margin: 0;
+    border-radius: 0;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  nav button {
+    font-size: 13px;
+    padding: 10px;
+  }
+  main {
+    padding: 16px;
+  }
+  .hero h1 {
+    font-size: 24px;
+  }
+  .grid {
+    gap: 9px;
+  }
+  .card {
+    padding: 14px;
+  }
+  .top {
+    padding: 0 16px;
+  }
+}
