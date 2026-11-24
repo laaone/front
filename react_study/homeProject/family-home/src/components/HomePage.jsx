@@ -1,21 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import HeroSlider from './HeroSlider';
 
-
-export default function HomePage({ menus, onSelect }) {
+export default function HomePage({ menus }) {
+  const navigate = useNavigate();
   const schedules = ['오후 4:00　아이 학원', '오후 6:30　가족 저녁식사', '오후 8:00　가족회의'];
   const notices = ['이번 주말 가족 나들이', '가족회의 안건을 등록해 주세요', '최근 앨범에 사진이 추가되었어요'];
 
   return (
     <>
       <HeroSlider />
-        <h1>우리 가족의 소중한 이야기 ♡</h1>
-        <p>우리집에 오신 것을 환영합니다. 오늘도 함께 행복한 하루를 만들어요.</p>
-      </section>
 
       <div className="grid">
         {menus.slice(1).map((m) => (
-          <button key={m.key} className="card" onClick={() => onSelect(m.key)}>
+          <button key={m.key} className="card" onClick={() => navigate(`/${m.key}`)}>
             <span className="emoji">{m.icon}</span>
             <b>{m.name}</b>
             <small>{m.desc}</small>

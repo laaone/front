@@ -1,7 +1,23 @@
-export default function SectionPage({ menu, onBack }) {
+import { useParams, useNavigate } from 'react-router-dom';
+
+export default function SectionPage({ menus }) {
+  const { key } = useParams();
+  const navigate = useNavigate();
+  const menu = menus.find((m) => m.key === key);
+
+  if (!menu) {
+    return (
+      <>
+        <button className="back" onClick={() => navigate('/')}>← 홈으로</button>
+        <h2>페이지를 찾을 수 없어요</h2>
+        <p className="sub">주소를 다시 확인해 주세요.</p>
+      </>
+    );
+  }
+
   return (
     <>
-      <button className="back" onClick={onBack}>← 홈으로</button>
+      <button className="back" onClick={() => navigate('/')}>← 홈으로</button>
       <h2>{menu.icon} {menu.name}</h2>
       <p className="sub">{menu.desc} · 상세 페이지 화면 시안</p>
 
